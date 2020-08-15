@@ -1,0 +1,10 @@
+@model testelinux.Models.teste
+
+<h1>Cadastro</h1>
+<div class="container">
+    <form asp-action="Cadastrar" method="POST" asp-controller="Teste">
+        <input class="form-control" type="text" asp-for="Nome">
+        <input class="btn btn-primary btn-lg mt-2" type="submit" value="Cadastrar">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </form>
+</div>

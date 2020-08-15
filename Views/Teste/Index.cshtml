@@ -1,0 +1,93 @@
+
+<a asp-action="Cadastrar">Novo</a>
+<h1>oi</h1>
+    <h3 class="text-center pb-3 pt-3 feedback"></h3>
+    <div class="tabela-listagem">
+        <table class="table table-striped table-dark">
+            <thead class="bg-dark">
+                <tr>
+                    <td>Id</td>
+                    <td>Nome</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody class="lista">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container text-center form-delete" style="display: none;">
+        ><form name="deletaForm" action="/Teste/Deletar" method="POST">
+            <h3>Deseja realmente deletar esté usuario?</h3>
+            <input type="hidden" name="Id" class="inpId">
+            <button class="btn btn-danger btn-lg" onclick="Deletar()">Confirmar</button>
+        </form>
+    </div>
+
+
+<script>
+    let ajax=new XMLHttpRequest();
+    ajax.open('GET', '/Teste/Lista/');
+	//console.log(ajax.readyState);	
+	ajax.onreadystatechange=()=>{
+	if(ajax.readyState==4 && ajax.status==200){
+			var resultado=JSON.parse(ajax.responseText)	
+			//cconsole.log(resultado);
+            for(let i = 0; i < resultado.length; i++){
+                let tr = document.createElement("tr");
+                let tdId = document.createElement('td')
+                let tdNome = document.createElement("td");
+                let tdDeleta = document.createElement('td');
+                let link = document.createElement('a');
+                link.className = "btn btn-danger deleta";
+                link.innerHTML = "DELETAR";
+                link.addEventListener('click', () =>{
+                    document.querySelector('.tabela-listagem').style.display = "none";
+                    document.querySelector('.form-delete').style.display = "block";
+                    document.querySelector('.inpId').value = resultado[i].id;
+                });
+                tdDeleta.appendChild(link);
+                tdId.innerHTML = resultado[i].id;
+                tdNome.innerHTML = resultado[i].nome;
+                tr.appendChild(tdId);
+                tr.appendChild(tdNome);
+                tr.appendChild(tdDeleta);
+                document.querySelector('.lista').appendChild(tr);
+            }
+		}
+		if(ajax.readyState==4 && ajax.status==404){
+					
+			document.getElementById('conteudo').innerHTML='requisicao concluida,error 404';
+					//document.getElementById('loading').remove();
+			}
+		}
+	ajax.send();
+
+    function Deletar(){
+       document.deletaForm.onsubmit = async e =>{
+			e.preventDefault()
+			const form = e.target 
+			const data = new FormData(form)
+
+			const options = {
+				method: form.method,
+				body: new URLSearchParams(data)
+			}
+			fetch(form.action, options)
+			.then(resp=>resp.json())
+			.then(json=>{
+				let response = JSON.stringify(json);
+                let feedElement = document.querySelector('.feedback')
+                feedElement.innerHTML = response;
+                feedElement.className = "text-sucesse";
+                document.querySelector('.tabela-listagem').style.display = "block";
+                document.querySelector('.form-delete').style.display = "none";
+			})
+			.catch(e=>{
+				console.log(e)
+			})
+
+		}
+    }
+</script>
