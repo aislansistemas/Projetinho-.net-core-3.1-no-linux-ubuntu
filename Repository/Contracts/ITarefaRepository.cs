@@ -9,5 +9,7 @@ namespace testelinux.Repository.Contracts
         void Insert(Tarefa tarefa);
         void ConcluirTarefa(Tarefa tarefa);
         Tarefa getByid(int id);
+
+        void Update(Tarefa tarefa);
     }
 }

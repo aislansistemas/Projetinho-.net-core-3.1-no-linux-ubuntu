@@ -21,12 +21,18 @@ namespace testelinux.Controllers
 
         [HttpGet]
         public IActionResult GetAllPendentes(){
+            
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GetAllPendentesJson(){
             var tarefaViewModel = new TarefaPendenteViewModel(){
                 ListaTarefas = _tarefaRepository.GetAllPendentes(),
                 TotalTarefasPendentes = _tarefaRepository.GetAllPendentes().Count,
                
             };
-            return View(tarefaViewModel);
+            return Json(tarefaViewModel);
         }
 
         [HttpGet]
@@ -62,6 +68,20 @@ namespace testelinux.Controllers
                 _tarefaRepository.ConcluirTarefa(tarefaResult);
                 return RedirectToAction(nameof(GetAllConcluidas));
             }
+        }
+
+        [HttpPost]
+        public IActionResult EditarTarefa(Tarefa tarefa){
+            var tarefaResult = _tarefaRepository.getByid(tarefa.Id);
+            if(tarefaResult == null){
+                ViewBag.Error = "Id não encontrado";
+                return RedirectToAction(nameof(GetAllPendentes));
+            }else{
+                _tarefaRepository.Update(tarefaResult);
+                ViewBag.Sucess = "Tarefa atualizada com sucesso";
+                return RedirectToAction(nameof(GetAllPendentes));  
+            }
+            
         }
 
     }

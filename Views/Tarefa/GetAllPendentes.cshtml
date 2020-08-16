@@ -1,8 +1,9 @@
-@model testelinux.ViewModels.TarefaPendenteViewModel;
+
 
 <div class="container">
     <h1 class="text-center">Tarefas Pendentes</h1>
     <span>@ViewBag.Error</span>
+    <span>@ViewBag.Sucess</span>
     <a class="btn btn-secondary" asp-action="Cadastrar">Novo</a>
     
     <div class="tabela-listagem">
@@ -12,22 +13,15 @@
                     <td>Id</td>
                     <td>Tarefa</td>
                     <td>Data</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody class="lista">
-        @foreach (var item in Model.ListaTarefas)
-        {
-            <tr class="tr-tarefas-pendentes">
-                <td class="tarefa-id">@item.Id</td>
-                <td class="tarefa-nome">@item.NomeTarefa</td>
-                <td>@item.DataCadastrada</td>
-                <td>
-                    <a class="btn btn-light text-dark" asp-route-id="@item.Id" asp-action="ConcluirTarefa">Concluir</a>
-                </td>
-            </tr>
-        }
+     
             </tbody>
         </table>
-        <h5>Total tarefas = <span class="text-secondary">@Model.TotalTarefasPendentes</span></h5>
+        
     </div>
+    <h5>Total de tarefas: <span class="total-pendentes text-success"></span></h5>
 </div>

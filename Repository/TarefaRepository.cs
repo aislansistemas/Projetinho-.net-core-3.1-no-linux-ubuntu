@@ -52,5 +52,10 @@ namespace testelinux.Repository
             _context.SaveChanges();
         }
 
+        public void Update(Tarefa tarefa)
+        {
+            _context.Tarefas.Update(tarefa);
+            _context.SaveChanges();
+        }
     }
 }
