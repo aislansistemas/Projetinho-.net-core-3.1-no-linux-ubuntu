@@ -9,7 +9,7 @@ using testelinux.Models;
 namespace testelinux.Controllers
 {
     public class TesteController : Controller
-    {       
+    {   /*  
         private readonly AppDbContext _context;
         public TesteController(AppDbContext context)
         {
@@ -49,7 +49,7 @@ namespace testelinux.Controllers
             _context.Remove(teste);
             _context.SaveChanges();
             return Json("Usuario(a) "+teste.Nome+" deletado com sucesso");
-        }
+        }*/
 
     }
 }

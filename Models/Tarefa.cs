@@ -8,7 +8,8 @@ namespace testelinux.Models
         public int Id { get; set; }
         [Required(ErrorMessage="Campo obrigatório")]
         public string NomeTarefa { get; set; }
-        public StatusTarefa Status {get;set;}
-        public DateTime Data { get; set; }
+        public string Status {get;set;}
+        public DateTime DataCadastrada { get; set; }
+        public DateTime? DataConcluida {get;set;}
     }
 }

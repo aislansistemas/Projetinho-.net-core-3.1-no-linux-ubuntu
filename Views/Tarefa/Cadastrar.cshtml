@@ -1,0 +1,12 @@
+@model testelinux.Models.Tarefa;
+
+<div class="container">
+    <h1 class="text-center">Cadastro</h1>
+
+    <form asp-action="Cadastrar" asp-controller="Tarefa" method="POST">
+        <label>Titulo da tarefa</label>
+        <input type="text" class="form-control" name="NomeTarefa">
+        <span asp-validation-for="NomeTarefa" class="text-danger"></span><br>
+        <input class="btn btn-dark" type="submit" value="Cadastrar">
+    </form> 
+</div>

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using testelinux.Context;
+using testelinux.Repository;
+using testelinux.Repository.Contracts;
 
 namespace testelinux
 {
@@ -25,10 +27,14 @@ namespace testelinux
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {   
+            
             var connection = Configuration["ConexaoSqlite:SqliteConnectionString"];
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(connection)
             );
+            
+            services.AddTransient<ITarefaRepository,TarefaRepository>();
+
             services.AddControllersWithViews();
             services.AddMvc();
         }
