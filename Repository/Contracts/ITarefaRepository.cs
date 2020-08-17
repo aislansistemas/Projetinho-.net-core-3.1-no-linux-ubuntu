@@ -1,15 +1,20 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using testelinux.Models;
 namespace testelinux.Repository.Contracts
 {
     public interface ITarefaRepository
     {
-        List<Tarefa> GetAllPendentes();
-        List<Tarefa> GetAllConcluidas();
-        void Insert(Tarefa tarefa);
-        void ConcluirTarefa(Tarefa tarefa);
-        Tarefa getByid(int id);
+        Task<List<Tarefa>> GetAllPendentes();
+        Task<List<Tarefa>> GetAllConcluidas();
+        Task Insert(Tarefa tarefa);
+        Task ConcluirTarefa(Tarefa tarefa);
+        Task<Tarefa> getByid(int id);
 
-        void Update(Tarefa tarefa);
+        Task Update(Tarefa tarefa);
+
+        int TotalPendentes();
+
+        int TotalConcluidas();
     }
 }

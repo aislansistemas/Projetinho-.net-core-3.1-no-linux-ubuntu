@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using testelinux.Repository.Contracts;
 using System.IO;
 using testelinux.ViewModels;
-
+using System.Threading.Tasks;
 
 namespace testelinux.Controllers
 {
@@ -23,11 +23,10 @@ namespace testelinux.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllPendentesJson(){
+        public async Task<IActionResult> GetAllPendentesJson(){
             var tarefaViewModel = new TarefaPendenteViewModel(){
-                ListaTarefas = _tarefaRepository.GetAllPendentes(),
-                TotalTarefasPendentes = _tarefaRepository.GetAllPendentes().Count,
-               
+                ListaTarefas = await _tarefaRepository.GetAllPendentes(),
+                TotalTarefasPendentes = _tarefaRepository.TotalPendentes() 
             };
             return Json(tarefaViewModel);
         }
@@ -38,43 +37,43 @@ namespace testelinux.Controllers
         }
 
         [HttpPost,ActionName("Cadastrar")]
-        public IActionResult CreateConfirm(Tarefa tarefa){
+        public async Task<IActionResult> CreateConfirm(Tarefa tarefa){
             if(ModelState.IsValid){
-                _tarefaRepository.Insert(tarefa);
+                await _tarefaRepository.Insert(tarefa);
                 return RedirectToAction(nameof(GetAllPendentes));
             }
             return View();
         }
 
         [HttpGet]
-        public IActionResult GetAllConcluidas(){
+        public async Task<IActionResult> GetAllConcluidas(){
             var tarefaViewModel = new TarefaConcluidaViewModel(){
-                ListaTarefas = _tarefaRepository.GetAllConcluidas(),
-                ToTalTarefasConcluidas = _tarefaRepository.GetAllConcluidas().Count
+                ListaTarefas = await _tarefaRepository.GetAllConcluidas(),
+                ToTalTarefasConcluidas = _tarefaRepository.TotalConcluidas()
             };
             return View(tarefaViewModel);
         }
 
         [HttpGet]
-        public IActionResult ConcluirTarefa(int id){
-            var tarefaResult = _tarefaRepository.getByid(id);
+        public async Task<IActionResult> ConcluirTarefa(int id){
+            var tarefaResult = await _tarefaRepository.getByid(id);
             if(tarefaResult == null){
                 ViewBag.Error = "Id não encontrado";
                 return RedirectToAction(nameof(GetAllPendentes));
             }else{
-                _tarefaRepository.ConcluirTarefa(tarefaResult);
+                await _tarefaRepository.ConcluirTarefa(tarefaResult);
                 return RedirectToAction(nameof(GetAllConcluidas));
             }
         }
 
         [HttpPost]
-        public IActionResult EditarTarefa(Tarefa tarefa){
-            var tarefaResult = _tarefaRepository.getByid(tarefa.Id);
+        public async Task<IActionResult> EditarTarefa(Tarefa tarefa){
+            var tarefaResult = await _tarefaRepository.getByid(tarefa.Id);
             if(tarefaResult == null){
                 ViewBag.Error = "Id não encontrado";
                 return RedirectToAction(nameof(GetAllPendentes));
             }else{
-                _tarefaRepository.Update(tarefaResult);
+                await _tarefaRepository.Update(tarefaResult);
                 ViewBag.Sucess = "Tarefa atualizada com sucesso";
                 return RedirectToAction(nameof(GetAllPendentes));  
             }

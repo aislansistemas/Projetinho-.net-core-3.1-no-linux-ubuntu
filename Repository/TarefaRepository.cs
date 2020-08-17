@@ -18,45 +18,53 @@ namespace testelinux.Repository
             this._context = context;
         }
 
-        public List<Tarefa> GetAllConcluidas()
+        public async Task<List<Tarefa>> GetAllConcluidas()
         {
-            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "concluida").OrderByDescending(x => x.Id).ToList();
+            return await _context.Tarefas.AsNoTracking().Where(x =>x.Status == "concluida").OrderByDescending(x => x.Id).ToListAsync();
         }
 
-        public List<Tarefa> GetAllPendentes()
+        public async Task<List<Tarefa>> GetAllPendentes()
         {
-            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "pendente").OrderByDescending(x => x.Id).ToList();
+            return await _context.Tarefas.AsNoTracking().Where(x =>x.Status == "pendente").OrderByDescending(x => x.Id).ToListAsync();
         }
 
-        public Tarefa getByid(int id)
+        public async Task<Tarefa> getByid(int id)
         {
         
-            return _context.Tarefas.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            return await _context.Tarefas.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         
         }
 
-        public void Insert(Tarefa tarefa)
+        public async Task Insert(Tarefa tarefa)
         {   
             var tarefaBd = tarefa;
             tarefaBd.DataCadastrada = DateTime.Now;
             tarefaBd.Status = "pendente";
 
-             _context.Tarefas.Add(tarefa);
-             _context.SaveChanges();
+            _context.Tarefas.Add(tarefa);
+            await _context.SaveChangesAsync();
         }
 
-        public void ConcluirTarefa(Tarefa tarefa)
+        public async Task ConcluirTarefa(Tarefa tarefa)
         {  
             tarefa.Status = "concluida";
             tarefa.DataConcluida = DateTime.Now;
             _context.Tarefas.Update(tarefa);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Tarefa tarefa)
+        public async Task Update(Tarefa tarefa)
         {
             _context.Tarefas.Update(tarefa);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+        }
+
+        public int TotalPendentes(){
+            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "pendente").ToList().Count();
+        }
+
+        public int TotalConcluidas(){
+            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "concluida").ToList().Count();
         }
     }
 }
