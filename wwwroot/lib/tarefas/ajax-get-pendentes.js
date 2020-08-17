@@ -1,7 +1,7 @@
 $( () => {
     
     $.get("/Tarefa/GetAllPendentesJson", (dados) => {
-        montaListaPendentes(dados);
+        montaListaPendentes(dados.listaTarefas);
         mostrarTotalPendentes(dados.totalTarefasPendentes);
     })
     .fail().always();;

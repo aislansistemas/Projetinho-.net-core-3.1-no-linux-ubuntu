@@ -1,8 +1,7 @@
 function montaListaPendentes(dados){
 
-    for(let i = 0; i < dados.listaTarefas.length; i++){
-        console.log(dados.listaTarefas[i])
-        let dadosTarefas = dados.listaTarefas[i];
+    for(let i = 0; i < dados.length; i++){
+        let dadosTarefas = dados[i];
         let tdId = $('<td>').addClass('td-id').text(dadosTarefas.id);
         let tdNome = $('<td>').addClass('td-nome').text(dadosTarefas.nomeTarefa);
         let dataFormatada = formataData(dadosTarefas.dataCadastrada);
@@ -11,7 +10,7 @@ function montaListaPendentes(dados){
         let tdButtaoEdit = $('<td>');
         let buttaoEdit = $('<button>').addClass('btn btn-primary botao-edit').text('Editar');
         
-        buttaoEdit.on("click", () => { 
+        buttaoEdit.one("click", () => { 
             let form = $('<form>').attr("action","/Tarefa/EditarTarefa").attr("method","post");
             let btnEnvia = $('<button>').addClass('btn btn-success botao-Envia').text('Salvar');
             let inpId = $('<input>').attr('type','hidden').attr("name","Id").addClass('form-control').val(tdId.text());

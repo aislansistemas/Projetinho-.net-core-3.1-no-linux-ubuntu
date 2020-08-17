@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wwNT8Mih1IGkLj92JkIC6aaoOPlr29si4sniGGI4p679NX6EUB2MnL6zHOnz5Q9DCDoKFZeInOtDI+1cG+2f+g==",
+  "dgSpecHash": "CcDxrbd9ywW2Eql9HdRWpKH96THEgm8yjIqZE1cHs9dnARUYuR4LYuHCQc0eBuUuhDJxFoPTigz26TEabDYK8Q==",
   "success": true,
   "projectFilePath": "/home/moobi/workshop/c#/testelinux/testelinux.csproj",
   "expectedPackageFiles": [
@@ -78,6 +78,7 @@
     "/home/moobi/.nuget/packages/sqlitepclraw.core/2.0.2/sqlitepclraw.core.2.0.2.nupkg.sha512",
     "/home/moobi/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.2/sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
     "/home/moobi/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.2/sqlitepclraw.provider.dynamic_cdecl.2.0.2.nupkg.sha512",
+    "/home/moobi/.nuget/packages/syncfusion.htmltopdfconverter.qtwebkit.net.core/18.2.0.44/syncfusion.htmltopdfconverter.qtwebkit.net.core.18.2.0.44.nupkg.sha512",
     "/home/moobi/.nuget/packages/system.appcontext/4.3.0/system.appcontext.4.3.0.nupkg.sha512",
     "/home/moobi/.nuget/packages/system.buffers/4.3.0/system.buffers.4.3.0.nupkg.sha512",
     "/home/moobi/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",

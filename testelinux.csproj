@@ -13,5 +13,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc" Version="3.1.4"/>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="*"/>
     <PackageReference Include="iTextSharp" Version="*"/>
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core" Version="*"/>
   </ItemGroup>
 </Project>

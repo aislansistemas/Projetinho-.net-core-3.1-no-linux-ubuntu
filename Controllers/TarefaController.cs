@@ -2,12 +2,9 @@ using testelinux.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using testelinux.Repository.Contracts;
-using iTextSharp.text.pdf;
-using iTextSharp;
-using iTextSharp.text;
-
 using System.IO;
 using testelinux.ViewModels;
+
 
 namespace testelinux.Controllers
 {

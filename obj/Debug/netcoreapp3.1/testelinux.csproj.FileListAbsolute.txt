@@ -160,3 +160,6 @@
 /home/moobi/workshop/c#/testelinux/obj/Debug/netcoreapp3.1/Razor/Views/Tarefa/GetAllPendentes.cshtml.g.cs
 /home/moobi/workshop/c#/testelinux/obj/Debug/netcoreapp3.1/Razor/Views/Tarefa/GetAllConcluidas.cshtml.g.cs
 /home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/itextsharp.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Syncfusion.Compression.Portable.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Syncfusion.HtmlConverter.Portable.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Syncfusion.Pdf.Portable.dll

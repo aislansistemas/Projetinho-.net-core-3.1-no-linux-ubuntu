@@ -6,6 +6,7 @@ using testelinux.Context;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace testelinux.Repository
 {
@@ -19,18 +20,18 @@ namespace testelinux.Repository
 
         public List<Tarefa> GetAllConcluidas()
         {
-            return _context.Tarefas.Where(x =>x.Status == "concluida").OrderByDescending(x => x.Id).ToList();
+            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "concluida").OrderByDescending(x => x.Id).ToList();
         }
 
         public List<Tarefa> GetAllPendentes()
         {
-            return _context.Tarefas.Where(x =>x.Status == "pendente").OrderByDescending(x => x.Id).ToList();
+            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "pendente").OrderByDescending(x => x.Id).ToList();
         }
 
         public Tarefa getByid(int id)
         {
         
-            return _context.Tarefas.FirstOrDefault(x => x.Id == id);
+            return _context.Tarefas.AsNoTracking().FirstOrDefault(x => x.Id == id);
         
         }
 
