@@ -5,6 +5,7 @@ using testelinux.Repository.Contracts;
 using System.IO;
 using testelinux.ViewModels;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace testelinux.Controllers
 {
@@ -24,6 +25,7 @@ namespace testelinux.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAllPendentesJson(){
+
             var tarefaViewModel = new TarefaPendenteViewModel(){
                 ListaTarefas = await _tarefaRepository.GetAllPendentes(),
                 TotalTarefasPendentes = _tarefaRepository.TotalPendentes() 
@@ -40,13 +42,15 @@ namespace testelinux.Controllers
         public async Task<IActionResult> CreateConfirm(Tarefa tarefa){
             if(ModelState.IsValid){
                 await _tarefaRepository.Insert(tarefa);
-                return RedirectToAction(nameof(GetAllPendentes));
+                return Json("sucesso");
             }
-            return View();
+        
+            return Json("erro");
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllConcluidas(){
+            
             var tarefaViewModel = new TarefaConcluidaViewModel(){
                 ListaTarefas = await _tarefaRepository.GetAllConcluidas(),
                 ToTalTarefasConcluidas = _tarefaRepository.TotalConcluidas()

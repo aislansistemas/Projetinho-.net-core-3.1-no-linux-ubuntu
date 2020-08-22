@@ -60,11 +60,11 @@ namespace testelinux.Repository
         }
 
         public int TotalPendentes(){
-            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "pendente").ToList().Count();
+            return _context.Tarefas.AsNoTracking().Count(x =>x.Status == "pendente");
         }
 
         public int TotalConcluidas(){
-            return _context.Tarefas.AsNoTracking().Where(x =>x.Status == "concluida").ToList().Count();
+            return _context.Tarefas.AsNoTracking().Count(x =>x.Status == "concluida");
         }
     }
 }

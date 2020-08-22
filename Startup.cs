@@ -27,12 +27,14 @@ namespace testelinux
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {   
-            
+            /*
             var connection = Configuration["ConexaoSqlite:SqliteConnectionString"];
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(connection)
-            );
-            
+            );*/
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+              
             services.AddTransient<ITarefaRepository,TarefaRepository>();
 
             services.AddControllersWithViews();
