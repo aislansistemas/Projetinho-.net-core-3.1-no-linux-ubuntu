@@ -26,8 +26,15 @@ using testelinux.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/home/moobi/workshop/c#/testelinux/Views/_ViewImports.cshtml"
+using testelinux.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"433a7af7850ed1cf0c2a0fb361883f418a44b23d", @"/Views/Tarefa/GetAllConcluidas.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d61fef85c5dff384c057f9b49702b5c82c046742", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fda5c44c691147c56a75a6334fb904720014b3c6", @"/Views/_ViewImports.cshtml")]
     public class Views_Tarefa_GetAllConcluidas : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<testelinux.ViewModels.TarefaConcluidaViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-secondary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -57,7 +64,7 @@ using testelinux.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\n<div class=\"container\">\n\n    <h1 class=\"text-center\">Tarefas concluidas</h1>\n\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "433a7af7850ed1cf0c2a0fb361883f418a44b23d3798", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "433a7af7850ed1cf0c2a0fb361883f418a44b23d3962", async() => {
                 WriteLiteral("Novo");
             }
             );

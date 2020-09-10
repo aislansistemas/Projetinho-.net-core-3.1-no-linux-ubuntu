@@ -26,8 +26,15 @@ using testelinux.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/home/moobi/workshop/c#/testelinux/Views/_ViewImports.cshtml"
+using testelinux.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d61fef85c5dff384c057f9b49702b5c82c046742", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fda5c44c691147c56a75a6334fb904720014b3c6", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

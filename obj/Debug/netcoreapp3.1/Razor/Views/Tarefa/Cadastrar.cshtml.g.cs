@@ -26,8 +26,15 @@ using testelinux.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/home/moobi/workshop/c#/testelinux/Views/_ViewImports.cshtml"
+using testelinux.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24a072d43bddae1fdd7e2bbb43ebf80ce300f21d", @"/Views/Tarefa/Cadastrar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d61fef85c5dff384c057f9b49702b5c82c046742", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fda5c44c691147c56a75a6334fb904720014b3c6", @"/Views/_ViewImports.cshtml")]
     public class Views_Tarefa_Cadastrar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<testelinux.Models.Tarefa>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger valida-nome"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -56,7 +63,7 @@ using testelinux.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\n<div class=\"container\">\n    <h1 class=\"text-center\">Cadastro</h1>\n    <h2 class=\"feed\" style=\"display: none;\"></h2>\n    <label>Titulo da tarefa</label>\n    <input type=\"text\" class=\"form-control nome-tarefa\" name=\"NomeTarefa\">\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24a072d43bddae1fdd7e2bbb43ebf80ce300f21d3626", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24a072d43bddae1fdd7e2bbb43ebf80ce300f21d3790", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();

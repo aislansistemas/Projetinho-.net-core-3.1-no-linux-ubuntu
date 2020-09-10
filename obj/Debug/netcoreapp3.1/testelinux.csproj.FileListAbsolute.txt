@@ -164,3 +164,11 @@
 /home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Syncfusion.HtmlConverter.Portable.dll
 /home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Syncfusion.Pdf.Portable.dll
 /home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Pomelo.EntityFrameworkCore.MySql.Design.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
+/home/moobi/workshop/c#/testelinux/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll
+/home/moobi/workshop/c#/testelinux/obj/Debug/netcoreapp3.1/Razor/Views/Account/Login.cshtml.g.cs
+/home/moobi/workshop/c#/testelinux/obj/Debug/netcoreapp3.1/Razor/Views/Account/Register.cshtml.g.cs
+/home/moobi/workshop/c#/testelinux/obj/Debug/netcoreapp3.1/Razor/Views/Account/CreateRoles.cshtml.g.cs

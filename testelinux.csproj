@@ -15,5 +15,7 @@
     <PackageReference Include="iTextSharp" Version="*"/>
     <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core" Version="*"/>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="*"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="*"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="*"/>
   </ItemGroup>
 </Project>

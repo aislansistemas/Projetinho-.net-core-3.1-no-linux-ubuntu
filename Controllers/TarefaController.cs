@@ -6,9 +6,10 @@ using System.IO;
 using testelinux.ViewModels;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace testelinux.Controllers
-{
+{   
     public class TarefaController:Controller
     {
         private readonly ITarefaRepository _tarefaRepository;
@@ -33,7 +34,9 @@ namespace testelinux.Controllers
             return Json(tarefaViewModel);
         }
 
+        
         [HttpGet]
+        [Authorize(Roles="admin")]
         public IActionResult Cadastrar(){
             return View();
         }

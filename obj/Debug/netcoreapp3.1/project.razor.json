@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/moobi/workshop/c#/testelinux/Views/Account/CreateRoles.cshtml",
+      "TargetPath": "Views\\Account\\CreateRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/moobi/workshop/c#/testelinux/Views/Tarefa/GetAllPendentes.cshtml",
       "TargetPath": "Views\\Tarefa\\GetAllPendentes.cshtml",
       "FileKind": "mvc"
@@ -14427,8 +14432,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/moobi/workshop/c#/testelinux/Views/Account/Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/moobi/workshop/c#/testelinux/Views/Tarefa/Cadastrar.cshtml",
       "TargetPath": "Views\\Tarefa\\Cadastrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/moobi/workshop/c#/testelinux/Views/Account/Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
